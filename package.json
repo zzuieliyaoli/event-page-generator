@@ -1,0 +1,30 @@
+{
+  "name": "event_page_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "entry.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzuieliyaoli/event_page_generator.git"
+  },
+  "keywords": [
+    "es6",
+    "webpack",
+    "react",
+    "node"
+  ],
+  "author": "zzuieliyaoli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzuieliyaoli/event_page_generator/issues"
+  },
+  "homepage": "https://github.com/zzuieliyaoli/event_page_generator#readme",
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "webpack": "^1.12.9"
+  }
+}
