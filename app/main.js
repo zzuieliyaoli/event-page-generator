@@ -1,8 +1,10 @@
 import React from 'react'
-import Hello from './components/test.jsx'
+import ReactDOM from 'react-dom'
+// import Hello from './components/test.jsx'
+import Para from './components/test.jsx'
 
 function main() {
-    React.render(<Hello />, document.getElementById('app'));
+    ReactDOM.render(<Para />, document.getElementById('app'));
 }
 
 main()
