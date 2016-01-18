@@ -6,8 +6,9 @@ var pathToReactDom = path.resolve(node_modules, 'react-dom/dist/react-dom.min.js
 module.exports = {
     entry: [
         'webpack/hot/dev-server', 
-        path.resolve(__dirname, 'app/main.js')
+        'webpack-dev-server/client?http://localhost:14444'
     ],
+    target: 'node',
     resolve: {
         alias: {
           'react': pathToReact,
@@ -17,6 +18,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',
+        publicPath: "http://localhost:14444/public/",
     },
     module: {
         loaders: [{
