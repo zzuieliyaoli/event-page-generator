@@ -5,12 +5,12 @@ import ReactDOM from 'react-dom'
 
 class Para extends React.Component {
     constructor () {
-        this.super()
+        super()
         this.eventHandler = this.eventHandler.bind(this)
     }
 
     eventHandler () {
-
+        this.a = 'asdasd'
     }
 
 }

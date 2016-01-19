@@ -1,17 +1,20 @@
 var express = require('express')
-var path = require('path')
-var logger = require('morgan')
-var bodyParser = require('body-parser')
-
 var app = express()
 
-app.set('port', process.env.PORT || 5000)
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('public'))
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jade')
 
-app.listen(app.get('port'), function(req, res) {
-  console.log('Express server listening on port ' + app.get('port'))
-  // res.sendFile(__dirname + '')
+app.get('/', function (req, res) {
+  res.render('index', {'title': 'event page generator'})
 })
+
+app.listen(5000, function() {
+    console.log('Express server listening on port 5000')
+})
+
+
+
+// "build": "webpack",
+//     "dev": "webpack-dev-server --port 14444 --devtool eval --progress --profile --colors --hot --content-base build",
+//     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",

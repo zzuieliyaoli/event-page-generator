@@ -1,0 +1,33 @@
+{
+  "name": "event_page_generator",
+  "description": "",
+  "main": "entry.js",
+  "authors": [
+    "zzuieliyaoli"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "es6",
+    "webpack",
+    "react",
+    "node"
+  ],
+  "homepage": "https://github.com/zzuieliyaoli/event-page-generator",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}
