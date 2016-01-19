@@ -1,8 +1,6 @@
-var path = require('path')
-var webpack = require('webpack')
-var node_modules = path.resolve(__dirname, 'node_modules')
-var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js')
-var pathToReactDom = path.resolve(node_modules, 'react-dom/dist/react-dom.min.js')
+const path = require('path')
+const webpack = require('webpack')
+const node_modules = path.resolve(__dirname, 'node_modules')
 
 module.exports = {
     entry: [
@@ -16,11 +14,7 @@ module.exports = {
         publicPath: "http://localhost:14444/public/"
     },
     resolve: {
-        extensions: ['', '.jsx', '.js'],
-        alias: {
-            'react': pathToReact,
-            'react-dom': pathToReactDom
-        }
+        extensions: ['', '.jsx', '.js']
     },
     module: {
         loaders: [{

@@ -1,22 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import Hello from './components/test.jsx'
+import Navbar from './components/Navbar.jsx'
 // import Para from './components/test.jsx'
 
-class Para extends React.Component {
-    constructor () {
-        super()
-        this.eventHandler = this.eventHandler.bind(this)
-    }
+// class Para extends React.Component {
+//     constructor () {
+//         super()
+//         this.eventHandler = this.eventHandler.bind(this)
+//     }
 
-    eventHandler () {
-        this.a = 'asdasd'
-    }
+//     eventHandler () {
+//         this.a = 'asdasd'
+//     }
 
-}
+// }
 
 // function main() {
-    ReactDOM.render(<Para />, document.getElementById('app'));
+    ReactDOM.render(<Navbar />, document.getElementById('app'));
 // }
 
 // main()

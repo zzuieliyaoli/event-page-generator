@@ -1,9 +1,10 @@
-var express = require('express')
-var app = express()
+const express = require('express')
+const app = express()
 
 app.use(express.static('public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jade')
+app.set('env', 'development')
 
 app.get('/', function (req, res) {
   res.render('index', {'title': 'event page generator'})
