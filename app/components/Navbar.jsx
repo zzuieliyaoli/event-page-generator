@@ -1,6 +1,5 @@
 import React from 'react'
-import { Router, Route, Link} from 'react-router'
-
+import { Router, Route, Link, IndexRoute, Redirect } from 'react-router'
 class App extends React.Component {
     render() {
         return (
@@ -39,15 +38,22 @@ class Message extends React.Component {
     }
 }
 
+class Dashboard extends React.Component {
+    render() {
+        return <div>Welcome to the app!</div>
+    }
+}
 
 class Navbar extends React.Component {
     render() {
         return (
             <Router>
                 <Route path="/" component={App}>
+                <IndexRoute component={Dashboard} />
                   <Route path="about" component={About} />
                   <Route path="inbox" component={Inbox}>
-                    <Route path="messages/:id" component={Message} />
+                    <Route path="/messages/:id" component={Message} />
+                    <Redirect from="messages/:id" to="/messages/:id" />
                   </Route>
                 </Route>
             </Router>
