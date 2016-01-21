@@ -8,8 +8,8 @@
     "dev": "webpack-dev-server --port 14444 --devtool eval --progress --inline --profile --colors --hot --content-base build",
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
     "start": "node server.js",
-    "test": "mocha",
-    "test:watch": "mocha --watch --reporter min"
+    "test": "mocha --compilers js:babel-register",
+    "test:watch": "mocha --compilers js:babel-register --watch --reporter min"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "history": "^1.17.0",
     "jade": "^1.11.0",
     "mocha": "^2.3.4",
+    "mongodb": "^2.1.4",
     "react": "^0.14.5",
     "react-addons-test-utils": "^0.14.6",
     "react-dom": "^0.14.5",
