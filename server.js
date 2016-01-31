@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const MongoClient = require('mongodb').MongoClient
+const assert = require('assert')
 
 app.use(express.static('public'))
 app.set('views', __dirname + '/views')
@@ -14,8 +16,9 @@ app.listen(5000, function() {
     console.log('Express server listening on port 5000')
 })
 
-
-
-// "build": "webpack",
-//     "dev": "webpack-dev-server --port 14444 --devtool eval --progress --profile --colors --hot --content-base build",
-//     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
+const url = 'mongodb://localhost:27017/test'
+MongoClient.connect(url, function(err, db) {
+  assert.equal(null, err)
+  console.log("Connected correctly to server.")
+  db.close()
+})
