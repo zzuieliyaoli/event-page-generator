@@ -9,5 +9,6 @@ describe('Navbar', () => {
         let actualResult = shallowRenderer.render(<Navbar/>)
 
         expect(actual.type).toBe('div')
+        
     })
 })
