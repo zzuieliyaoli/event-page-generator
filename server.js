@@ -1,8 +1,11 @@
+'use strict';
+
 const express = require('express')
 const app = express()
-const multer = require('multer')
-const upload = multer().single('avatar')
+// const multer = require('multer')
+// const upload = multer().single('avatar')
 
+const Busboy = require('busboy')
 
 const MongoClient = require('mongodb').MongoClient
 const assert = require('assert')
@@ -26,16 +29,41 @@ app.get('/', function(request, response) {
 })
 
 app.post(api.uploadImg, function(request, response) {
+    console.log('post')
+    console.log(request.headers)
+    // console.dir(request.files)
 
-    upload(request, response, function(err) {
-        if (err) {
-            throw new Error(err)
+    // upload(request, response, function(err) {
+    //     if (err) {
+    //         throw new Error(err)
+    //     }
+    //     console.log(request)
+    //         // Everything went fine
+    // })
+    var busboy = new Busboy({ headers: request.headers })
+    console.log(busboy)
+    busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+        console.log('yo--------------------')
 
-        }
-        console.log(request.file)
-            // Everything went fine
-    })
+        console.log('File [' + fieldname + ']: filename: ' + filename + ', encoding: ' + encoding + ', mimetype: ' + mimetype)
+        file.on('data', function(data) {
+            console.log('File [' + fieldname + '] got ' + data.length + ' bytes')
+        })
+        file.on('end', function() {
+            console.log('File [' + fieldname + '] Finished')
+        })
+
         
+
+    })
+
+    busboy.on('finish', function() {
+        console.log('Done parsing form!')
+        response.writeHead(303, { Connection: 'close', Location: '/' })
+        response.end()
+    })
+
+    request.pipe(busboy)
 
 })
 
