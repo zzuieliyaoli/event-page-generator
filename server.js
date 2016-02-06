@@ -2,14 +2,13 @@
 
 const express = require('express')
 const app = express()
-// const multer = require('multer')
-// const upload = multer().single('avatar')
 
 const Busboy = require('busboy')
+const mongodb = require('mongodb')
 
-const MongoClient = require('mongodb').MongoClient
+const MongoClient = mongodb.MongoClient
 const assert = require('assert')
-const ObjectId = require('mongodb').ObjectID
+
 const mongoServerUrl = 'mongodb://localhost:27017/test'
 
 const api = {
