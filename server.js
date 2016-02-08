@@ -30,15 +30,7 @@ app.get('/', function(request, response) {
 app.post(api.uploadImg, function(request, response) {
     console.log('post')
     console.log(request.headers)
-    // console.dir(request.files)
-
-    // upload(request, response, function(err) {
-    //     if (err) {
-    //         throw new Error(err)
-    //     }
-    //     console.log(request)
-    //         // Everything went fine
-    // })
+    
     var busboy = new Busboy({ headers: request.headers })
     console.log(busboy)
     busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
@@ -51,9 +43,6 @@ app.post(api.uploadImg, function(request, response) {
         file.on('end', function() {
             console.log('File [' + fieldname + '] Finished')
         })
-
-        
-
     })
 
     busboy.on('finish', function() {
@@ -65,7 +54,6 @@ app.post(api.uploadImg, function(request, response) {
     request.pipe(busboy)
 
 })
-
 
 app.listen(5000, function() {
     console.log('Express server listening on port 5000')
