@@ -2,15 +2,11 @@
 
 const express = require('express')
 const app = express()
-
 const Busboy = require('busboy')
 const mongodb = require('mongodb')
-
 const MongoClient = mongodb.MongoClient
 const assert = require('assert')
-
 const mongoServerUrl = 'mongodb://localhost:27017/test'
-
 const api = {
     'uploadImg': '/api/uploadImg'
 }
