@@ -43,7 +43,6 @@ app.get('/', function(request, response) {
 
 app.post(api.uploadImg, function(request, response) {
     console.log('post')
-
     let busboy = new Busboy({
         headers: request.headers
     })
