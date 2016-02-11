@@ -64,10 +64,10 @@ app.post(api.uploadImg, function(request, response) {
     busboy.on('finish', function() {
         console.log('Done parsing form!')
         console.log('fileId is', fileId)
-        response.writeHead(303, {
-            Connection: 'close',
-            Location: '/'
-        })
+        // response.writeHead(303, {
+        //     Connection: 'close',
+        //     Location: '/'
+        // })
         response.end()
     })
 
