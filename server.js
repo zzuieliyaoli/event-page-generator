@@ -17,11 +17,9 @@ MongoClient.connect(mongoServerUrl, function(err, db) {
     db.close()
 })
 
-const gfs
+let gfs
 db.open(function(err, db) {
-    if (err) {
-        throw err
-    }
+    if (err) throw err
     gfs = Grid(db, mongodb)
 })
 
@@ -43,6 +41,7 @@ app.get('/', function(request, response) {
 
 app.post(api.uploadImg, function(request, response) {
     console.log('post')
+
     let busboy = new Busboy({
         headers: request.headers
     })
