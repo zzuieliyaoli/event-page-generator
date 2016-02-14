@@ -4,10 +4,10 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <h1>app</h1>
+                <h1>Event page generator</h1>
                 <ul>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/Inbox">Inbox</Link></li>
+                    <li><Link to="/pc">Pc</Link></li>
+                    <li><Link to="/mobile">Mobile</Link></li>
                 </ul>
                 {this.props.children}
             </div>
@@ -15,18 +15,18 @@ class App extends React.Component {
     }
 }
 
-class About extends React.Component {
+class Mobile extends React.Component {
     render() {
-        return <h3>About</h3>
+        return <h3>Mobile</h3>
     }
 }
 
-class Inbox extends React.Component {
+class Pc extends React.Component {
     render() {
         return (
             <div>
-                <h2>InBox</h2>
-                {this.props.children || "Welcome to your Inbox"}
+                <h2>Pc</h2>
+                {this.props.children || "Welcome to your Pc"}
             </div>
         )
     }
@@ -50,8 +50,8 @@ class Navbar extends React.Component {
             <Router>
                 <Route path="/" component={App}>
                 <IndexRoute component={Dashboard} />
-                  <Route path="about" component={About} />
-                  <Route path="inbox" component={Inbox}>
+                  <Route path="mobile" component={Mobile} />
+                  <Route path="pc" component={Pc}>
                     <Route path="/messages/:id" component={Message} />
                     <Redirect from="messages/:id" to="/messages/:id" />
                   </Route>
