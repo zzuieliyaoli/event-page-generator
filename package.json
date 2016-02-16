@@ -40,6 +40,7 @@
     "jade": "^1.11.0",
     "jsdom": "^7.2.2",
     "mocha": "^2.3.4",
+    "mongo-express": "^0.30.15",
     "mongodb": "^2.1.7",
     "react": "^0.14.5",
     "react-addons-test-utils": "^0.14.7",
